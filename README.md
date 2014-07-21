@@ -3,7 +3,11 @@
 
 > Pleasing the DOM event handling in just 1.4K
 
-### Usage
+## Concept
+
+In most of the cases we rely on DOM events. They are tightly bind to our workflow. We normally add elements to the DOM tree dynamically. Whenever we want to get info from them we have to add event listeners. And guess what? Most of us are doing this every time when the UI is changed. That's because we remove or replace node's content. In such cases the attached listeners are gone. Bubble.js aims to help here. It adds event listeners to the root of our logical blocks.
+
+## Usage
 
 Include Bubble.js in your page.
 
@@ -49,16 +53,16 @@ b.on({
 
 Check out the result [here](http://jsbin.com/vujelo/3/edit?js,console,output).
 
-### Building
+## Building
 
 * `npm install`
 * `npm run build`
 
-### Tests
+## Tests
 
 Open `tests` directory in a browser or click on [this](http://work.krasimirtsonev.com/git/bubblejs/tests) link.
 
-### Demo
+## Demo
 
 [Basic usage](http://jsbin.com/vujelo/3/edit?js,console,output)
 [Simple list-to-list app](http://work.krasimirtsonev.com/git/bubblejs/example/)

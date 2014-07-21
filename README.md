@@ -28,9 +28,11 @@ Pick the area where Bubble.js will operate and set a proper `data-bubble-action`
 
 After that initialize the bubble:
 ```js
+// use a selector to element
+// that wraps your dispatchers
 var b = bubble('.header');
 ```
-And defined handlers for your events:
+And define the handlers of your events:
 ```js
 b.on('logo', function(e) { console.log('Logo link clicked!'); })
 .on('about', function(e) { console.log('About link clicked!'); })

@@ -1,7 +1,9 @@
 # Bubble.js
 ---
 
-Pleasing the DOM event handling
+## Pleasing the DOM event handling in just 1.4K
+
+
 
 ### Building
 
@@ -10,4 +12,4 @@ Pleasing the DOM event handling
 
 ### Tests
 
-Open `tests` directory in a browser.
+Open `tests` directory in a browser or click on [this](http://work.krasimirtsonev.com/git/bubblejs/tests) link.

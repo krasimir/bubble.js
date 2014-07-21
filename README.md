@@ -1,9 +1,7 @@
 # Bubble.js
 ---
 
-> Pleasing the DOM event handling in just 1.4K
-
-## Concept
+## Pleasing the DOM event handling in just 1.4K
 
 In most of the cases we rely on DOM events. They are tightly bind to our workflow. We normally add elements to the DOM tree dynamically. Whenever we want to get info from them we have to add event listeners. And guess what? Most of us are doing this every time when the UI is changed. That's because we remove or replace node's content. In such cases the attached listeners are gone. Bubble.js aims to help here. It adds event listeners to the root of our logical blocks.
 

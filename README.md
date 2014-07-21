@@ -62,5 +62,9 @@ Open `tests` directory in a browser or click on [this](http://work.krasimirtsone
 
 ## Demo
 
-[Basic usage](http://jsbin.com/vujelo/3/edit?js,console,output)
-[Simple list-to-list app](http://work.krasimirtsonev.com/git/bubblejs/example/)
+* [Basic usage](http://jsbin.com/vujelo/3/edit?js,console,output)
+* [Simple list-to-list app](http://work.krasimirtsonev.com/git/bubblejs/example/)
+
+## Articles
+
+* TBA

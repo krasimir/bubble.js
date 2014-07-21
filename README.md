@@ -19,3 +19,7 @@ Include Bubble.js in your page.
 ### Tests
 
 Open `tests` directory in a browser or click on [this](http://work.krasimirtsonev.com/git/bubblejs/tests) link.
+
+### Demo
+
+[Bubble.js in action](http://work.krasimirtsonev.com/git/bubblejs/example/)

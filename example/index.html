@@ -3,12 +3,124 @@
     <head>
         <title>Bubble.js example</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style>
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                font-size: 14px;
+                font-family: Verdana;
+            }
+            .content, .favorite-area {
+                float: left;
+                width: 300px;
+                padding: 20px;
+            }
+            input[type="text"] {
+                display: block;
+                width: 100%;
+                margin: 0 0 10px 0;
+                font-size: 20px;
+                padding: 4px;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            ul li {
+                margin: 0 0 4px 0;
+            }
+            ul li a {
+                text-align: center;
+                display: block;
+                width: 100%;
+                background: #E6E6E6;
+                border-radius: 4px;
+                padding: 4px 0;
+                border-bottom: 1px solid #7B7B7B;
+                text-decoration: none;
+                color: #000;
+            }
+            ul li a:hover {
+                background: #999;
+            }
+            .clear {
+                clear: both;
+            }
+        </style>
     </head>
     <body>
+        <div class="content">
+            <h3>Dictionary</h3>
+            <input type="text" placeholder="filter" data-bubble-action="keyup:filter" />
+            <ul></ul>
+        </div>
+        <div class="favorite-area">
+            <h3>I want to visit:</h3>
+            <ul></ul>
+        </div>
+        <br class="clear" />
         <script src="../src/bubble.js"></script>
+        <script src="cities.js"></script>
         <script>
+            var list, filter, favoriteList, favorite = [];
+            var printCities = function(filterStr) {
+                cities.sort();
+                var html = '';
+                for(var i=0; i<cities.length; i++) {
+                    var r = new RegExp(filterStr, 'i');
+                    if(!filterStr || filterStr === '' || r.test(cities[i])) {
+                        html += '<li><a href="#" data-bubble-action="visit">' + cities[i] + '</a></li>';
+                    }
+                }
+                list.innerHTML = html;
+            }
+            var printFavorite = function() {
+                favorite.sort();
+                var html = '';
+                for(var i=0; i<favorite.length; i++) {
+                    html += '<li><a href="#" data-bubble-action="remove">' + favorite[i] + '</a></li>';
+                }
+                favoriteList.innerHTML = html;
+            }
+            var removeFromArr = function(city, arr) {
+                for(var i=0; i<arr.length; i++) {
+                    if(arr[i] === city) {
+                        arr.splice(i, 1);
+                        return;
+                    }
+                }
+            }
             window.onload = function() {
-                console.log(bubble);
+
+                bubble('.content').on('filter', function(e) {
+                    printCities(e.target.value);
+                }).on('visit', function(e) {
+                    removeFromArr(e.target.innerHTML, cities);
+                    favorite.push(e.target.innerHTML);
+                    printCities();
+                    printFavorite();
+                });
+
+                bubble('.favorite-area').on('remove', function(e) {
+                    removeFromArr(e.target.innerHTML, favorite);
+                    cities.push(e.target.innerHTML);
+                    printCities();
+                    printFavorite();
+                });
+
+                filter = document.querySelector('.content input');
+                list = document.querySelector('.content ul');
+                favoriteList = document.querySelector('.favorite-area ul');
+
+                printCities();
+
+                filter.focus();
+
             }
         </script>
     </body>

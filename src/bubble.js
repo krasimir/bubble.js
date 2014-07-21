@@ -5,8 +5,11 @@
         factory();
     }
 }(this, function() {
-	bubble = function(s) {
-		var api = {}, r, i, nodes, events = {}, d = document, listeners = {}, listenersObjs = [],
+	bubble = function(s, defaultEventTypes) {
+		var api = {}, r, i, nodes, d = document, listeners = {}, listenersObjs = [],
+		events = defaultEventTypes || {
+			blur: true, change: true, click: true, dblclick: true, drag: true, dragend: true, dragenter: true, dragleave: true, dragover: true, dragstart: true, drop: true, focus: true, fullscreenchange: true, input: true, keydown: true, keypress: true, keyup: true, mousedown: true, mouseenter: true, mouseleave: true, mousemove: true, mouseout: true, mouseover: true, mouseup: true, paste: true, readystatechange: true, resize: true, scroll: true, touchcancel: true, touchend: true, touchenter: true, touchleave: true, touchmove: true, touchstart: true, transitionend: true, load: true, unload: true
+		},
 		qs = 'querySelector', qsa = 'querySelectorAll', attr = 'data-bubble-action', ga = 'getAttribute',
 		ael = function(obj, evt, fnc) {
 		    if (obj.addEventListener) {

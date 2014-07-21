@@ -1,9 +1,15 @@
 # Bubble.js
 ---
 
-## Pleasing the DOM event handling in just 1.4K
+> Pleasing the DOM event handling in just 1.4K
 
+### Usage
 
+Include Bubble.js in your page.
+
+```html
+<script src="../src/bubble.js"></script>
+```
 
 ### Building
 

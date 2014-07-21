@@ -3,9 +3,29 @@
     <meta charset="utf-8">
     <title>Tests</title>
     <link rel="stylesheet" href="vendors/mocha.css" />
+    <style>
+        .wrapper { display: none; }
+    </style>
 </head>
 <body>
     <div id="mocha"></div>
+    <div class="wrapper">
+        <section class="content">
+            <aside>
+                <form>
+                    <input type="text" name="name" data-bubble-action="focus:inputFocus, change:inputChanged">
+                    <input type="button" value="click me" data-bubble-action="click:clickButton">
+                    <a href="#" class="the-link" data-bubble-action="click:clickTheLink">the link</a>
+                </form>
+                <a href="#" class="out-of-form" data-bubble-action="click:clickOutOfForm">out of form</a>
+            </aside>
+            <aside>
+                <nav>
+                    <a href="#" class="nav-link" data-bubble-action="click:navLink">nav link</a>
+                </nav>
+            </aside>
+        </section>
+    </div>
     <script src="../src/bubble.js"></script>
     <script src="vendors/expect.js"></script>
     <script src="vendors/mocha.js"></script>

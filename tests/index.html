@@ -17,13 +17,34 @@
                     <input type="button" value="click me" data-bubble-action="click:clickButton">
                     <a href="#" class="the-link" data-bubble-action="click:clickTheLink">the link</a>
                 </form>
-                <a href="#" class="out-of-form" data-bubble-action="click:clickOutOfForm">out of form</a>
+                <a href="#" class="out-of-form" data-bubble-action="clickOutOfForm">out of form</a>
             </aside>
             <aside>
                 <nav>
                     <a href="#" class="nav-link" data-bubble-action="click:navLink">nav link</a>
                 </nav>
             </aside>
+            <aside class="dropdown">
+                <div class="dropdown-wrapper">
+                    <select data-bubble-action="change:dropdownChanged">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </div>
+            </aside>
+            <aside class="list" data-bubble-action="click:listItemSelected, focus:onlistNameFocused">
+                <ul>
+                    <li><a href="#" data-value="A">A</a></li>
+                    <li><a href="#" data-value="B">B</a></li>
+                    <li><a href="#" data-value="C">C</a></li>
+                    <li><a href="#" data-value="D">D</a></li>
+                </ul>
+                <input type="text" name="listname">
+            </aside>
+            <a href="#" class="footer-link" data-bubble-action="click:footerLink">footer link</a>
         </section>
     </div>
     <script src="../src/bubble.js"></script>

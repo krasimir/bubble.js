@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tests</title>
+    <link rel="stylesheet" href="vendors/mocha.css" />
+</head>
+<body>
+    <div id="mocha"></div>
+    <script src="../src/bubble.js"></script>
+    <script src="vendors/expect.js"></script>
+    <script src="vendors/mocha.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <script src="tests.js"></script>
+    <script>
+        mocha.checkLeaks();
+        mocha.run();
+    </script>
+</body>
+</html>

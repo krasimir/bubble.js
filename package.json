@@ -1,0 +1,31 @@
+{
+  "name": "bubble.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/krasimir/bubble.js",
+  "description": "Pleasing the DOM event handling",
+  "author": {
+    "name": "Krasimir Tsonev",
+    "email": "info@krasimirtsonev.com",
+    "url": "http://krasimirtsonev.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "uglify-js": "2.4.14"
+  },
+  "keywords": [
+    "javascript",
+    "DOM",
+    "events",
+    "handling"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krasimir/bubble.js"
+  },
+  "scripts": {
+    "build": "node ./build.js"
+  }
+}

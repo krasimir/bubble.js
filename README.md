@@ -8,8 +8,46 @@
 Include Bubble.js in your page.
 
 ```html
-<script src="../src/bubble.js"></script>
+<script src="js/bubble.min.js"></script>
 ```
+
+Pick the area where Bubble.js will operate and set a proper `data-bubble-action` describing your events. For example:
+
+```html
+<div class="header">
+	<a href="#" data-bubble-action="click:logo">logo</a>
+	<input type="text" name="filter" data-bubble-action="keyup:filter, blur:filter-leaved" />
+	<ul>
+		<li><a href="#" data-bubble-action="click:about">About</a></li>
+		<li><a href="#" data-bubble-action="click:contacts">Contacts</a></li>
+	</ul>
+</div>
+```
+
+After that initialize the bubble:
+```js
+var b = bubble('.header');
+```
+And defined handlers for your events:
+```js
+b.on('logo', function(e) { console.log('Logo link clicked!'); })
+.on('about', function(e) { console.log('About link clicked!'); })
+.on('contacts', function(e) { console.log('Contacts link clicked!'); })
+.on('filter', function(e) { console.log('Filter: ' + e.target.value); })
+.on('filter-leaved', function() { console.log('Filter field leaved'); });
+```
+or
+```js
+b.on({
+    logo: function(e) { console.log('Logo link clicked!'); },
+    about: function(e) { console.log('About link clicked!'); },
+    contacts: function(e) { console.log('Contacts link clicked!'); },
+    filter: function(e) { console.log('Filter: ' + e.target.value); },
+    'filter-leaved': function(e) { console.log('Filter field leaved'); }
+});
+```
+
+Check out the result [here](http://jsbin.com/vujelo/3/edit?js,console,output).
 
 ### Building
 
@@ -22,4 +60,5 @@ Open `tests` directory in a browser or click on [this](http://work.krasimirtsone
 
 ### Demo
 
-[Bubble.js in action](http://work.krasimirtsonev.com/git/bubblejs/example/)
+[Basic usage](http://jsbin.com/vujelo/3/edit?js,console,output)
+[Simple list-to-list app](http://work.krasimirtsonev.com/git/bubblejs/example/)

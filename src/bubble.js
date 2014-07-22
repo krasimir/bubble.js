@@ -8,9 +8,9 @@
 	bubble = function(s, defaultEventTypes) {
 		var api = {}, r, i, d = document, listeners = {}, listenersObjs = [],
 		events = defaultEventTypes || {
-			blur: true, change: true, click: true, dblclick: true, drag: true, dragend: true, dragenter: true, dragleave: true, dragover: true, dragstart: true, drop: true, focus: true, fullscreenchange: true, input: true, keydown: true, keypress: true, keyup: true, mousedown: true, mouseenter: true, mouseleave: true, mousemove: true, mouseout: true, mouseover: true, mouseup: true, paste: true, readystatechange: true, resize: true, scroll: true, touchcancel: true, touchend: true, touchenter: true, touchleave: true, touchmove: true, touchstart: true, transitionend: true, load: true, unload: true
+			blur: 1, change: 1, click: 1, dblclick: 1, drag: 1, dragend: 1, dragenter: 1, dragleave: 1, dragover: 1, dragstart: 1, drop: 1, focus: 1, fullscreenchange: 1, input: 1, keydown: 1, keypress: 1, keyup: 1, mousedown: 1, mouseenter: 1, mouseleave: 1, mousemove: 1, mouseout: 1, mouseover: 1, mouseup: 1, paste: 1, readystatechange: 1, resize: 1, scroll: 1, touchcancel: 1, touchend: 1, touchenter: 1, touchleave: 1, touchmove: 1, touchstart: 1, transitionend: 1, load: 1, unload: 1
 		},
-		qs = 'querySelector', qsa = 'querySelectorAll', attr = 'data-bubble-action', ga = 'getAttribute',
+		qs = 'querySelector', attr = 'data-bubble-action', ga = 'getAttribute',
 		ael = function(obj, evt, fnc) {
 		    if (obj.addEventListener) {
 		        obj.addEventListener(evt, fnc, evt === 'focus' || evt === 'blur');

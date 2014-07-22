@@ -6,7 +6,7 @@
     }
 }(this, function() {
 	bubble = function(s, defaultEventTypes) {
-		var api = {}, r, i, nodes, d = document, listeners = {}, listenersObjs = [],
+		var api = {}, r, i, d = document, listeners = {}, listenersObjs = [],
 		events = defaultEventTypes || {
 			blur: true, change: true, click: true, dblclick: true, drag: true, dragend: true, dragenter: true, dragleave: true, dragover: true, dragstart: true, drop: true, focus: true, fullscreenchange: true, input: true, keydown: true, keypress: true, keyup: true, mousedown: true, mouseenter: true, mouseleave: true, mousemove: true, mouseout: true, mouseover: true, mouseup: true, paste: true, readystatechange: true, resize: true, scroll: true, touchcancel: true, touchend: true, touchenter: true, touchleave: true, touchmove: true, touchstart: true, transitionend: true, load: true, unload: true
 		},
@@ -36,7 +36,6 @@
 			}
 			for(i=0; i<actions.length; i++) {
 				if(actions[i].type === type && actions[i].event) {
-					e.stopPropagation();
 					api.dispatch(actions[i].event, e);
 				}
 			}
@@ -76,16 +75,6 @@
 			return api;
 		};
 		if(r) {
-			// collecting events' types
-			api.nodes = nodes = r[qsa]('[' + attr + ']');
-			var processNode = function(node) {
-				var actions = parse(node[ga](attr));
-				for(var j=0; j<actions.length; j++) {
-					events[actions[j].type] = true;
-				}
-			}
-			processNode(r);
-			for(i=0; i<nodes.length; i++) processNode(nodes[i]);
 			// adding listeners
 			for(var type in events) {
 				(function(t) {

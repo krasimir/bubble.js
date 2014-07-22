@@ -19,11 +19,6 @@ describe('Testing Bubble.js', function() {
 			expect(b.root).not.to.be(undefined);
 			done();
 		});
-		it('should select nodes', function(done) {
-			expect(b.nodes).not.to.be(undefined);
-			expect(b.nodes.length).above(0);
-			done();
-		});
 	});
 
 	describe('event handling', function() {

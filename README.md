@@ -69,4 +69,4 @@ Open `tests` directory in a browser or click on [this](http://work.krasimirtsone
 
 ## Articles
 
-* TBA
+* [Bubble.js: A 1.6K Solution to a Common Problem](http://code.tutsplus.com/tutorials/bubblejs-a-16k-solution-to-a-common-problem--cms-21986)

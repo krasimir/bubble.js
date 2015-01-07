@@ -9,10 +9,10 @@
     "url": "http://krasimirtsonev.com"
   },
   "license": "MIT",
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^2.1.0",
     "uglify-js": "2.4.14"
   },
   "keywords": [
@@ -26,6 +26,6 @@
     "url": "https://github.com/krasimir/bubble.js"
   },
   "scripts": {
-    "build": "node ./build.js"
+    "build": "uglifyjs src/bubble.js -o build/bubble.min.js -mt -c"
   }
 }
